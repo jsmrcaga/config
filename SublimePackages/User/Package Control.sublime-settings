@@ -1,0 +1,14 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"All Autocomplete",
+		"CSS3",
+		"Dockerfile Syntax Highlighting",
+		"Package Control",
+		"Terraform",
+	],
+}

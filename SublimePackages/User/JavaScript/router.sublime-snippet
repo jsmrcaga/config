@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+const express = require('express');
+const ${1:router} = express.Router();
+
+module.exports = ${1:router};
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>!router</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>

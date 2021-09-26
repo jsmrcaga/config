@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+if (process.argv && process.argv.indexOf('-v') > -1) {
+	const pkg = require('./package.json');
+	return ${1:console.log}(`${2:package_name} version ![CDATA[${pkg.version}]]`);
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>!-v</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>
