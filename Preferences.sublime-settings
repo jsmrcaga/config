@@ -1,0 +1,41 @@
+{
+	"binary_file_patterns":
+	[
+		"*.jpg",
+		"*.jpeg",
+		"*.png",
+		"*.gif",
+		"*.ttf",
+		"*.tga",
+		"*.dds",
+		"*.ico",
+		"*.eot",
+		"*.pdf",
+		"*.swf",
+		"*.jar",
+		"*.zip",
+		"node_modules/*",
+		"bower_components/*"
+	],
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"ensure_newline_at_eof_on_save": true,
+	"folder_exclude_patterns":
+	[
+		"node_modules",
+		"vendor",
+		".git",
+		"dist",
+		"build"
+	],
+	"font_size": 15,
+	"ignored_packages":
+	[
+		"CSS",
+		"Vintage",
+	],
+	"show_encoding": true,
+	"theme": "Adaptive.sublime-theme",
+	"word_wrap": false,
+	"caret_style": "phase",
+	"auto_complete_commit_on_tab": true,
+}

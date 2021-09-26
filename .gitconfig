@@ -5,7 +5,6 @@
 	co = checkout
 	dc = diff
 	lg = log -p
-	pr = pull --rebase
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	p = push
@@ -13,8 +12,19 @@
 	lg = log
 	pl = push --force-with-lease
 	pf = push -f
+	pr = !pr
 	squash = "!f(){ git rebase -i HEAD~${1}; }; f"
 	amend = commit --amend --no-edit
+	cleanup = "!git branch | grep -v "master" | xargs git branch -D"
+	contrib = !git pull --rebase && git push
+	magic = !git add -u && git amend && git pl
+[user]
+	name = Jo Colina
+	email = jo.colina@weezevent.com
 [core]
 	editor = nano
 	excludesfile = ~/.gitignore
+[push]
+	followTags = true
+[pull]
+	rebase = false
