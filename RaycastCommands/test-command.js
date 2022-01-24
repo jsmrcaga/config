@@ -8,7 +8,7 @@
 // Optional parameters:
 // @raycast.icon 🤖
 // @raycast.packageName Jo - Test
-// @raycast.needsConfirmation false
+// @raycast.needsConfirmation true
 // @raycast.argument1 { "type": "text", "placeholder": "Arg me!", "percentEncoded": false, "optional": true, "secure": false }
 
 
