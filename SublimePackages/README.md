@@ -1,5 +1,4 @@
-* Rename this folder `Packages`
-* Copy into Sublime packages folder
+* Copy or `ln -s` into Sublime packages folder
 
 
 Last path
