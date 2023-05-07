@@ -1,0 +1,13 @@
+#compdef dev
+
+_dev() {
+	local state
+
+	_arguments '1: :->dir'
+
+	case $state in
+		(dir) _arguments '1:profiles:($(ls ~/Weez))';;
+	esac
+}
+
+_dev "$@"
