@@ -11,5 +11,6 @@
 		"GraphQL",
 		"Package Control",
 		"Terraform",
+		"TOML",
 	],
 }

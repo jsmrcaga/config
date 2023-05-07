@@ -25,7 +25,8 @@
 		"vendor",
 		".git",
 		"dist",
-		"build"
+		"build",
+		".next",
 	],
 	"font_size": 15,
 	"ignored_packages":
