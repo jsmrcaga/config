@@ -1,0 +1,10 @@
+[
+	{
+		"caption": "Show/Reveal in Side bar",
+		"command": "reveal_in_side_bar"
+	},
+	{
+		"caption": "Show unsaved changes (diff)",
+		"command": "diff_changes"
+	}
+]
