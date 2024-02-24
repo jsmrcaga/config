@@ -2,7 +2,7 @@
 
 // Required parameters:
 // @raycast.schemaVersion 1
-// @raycast.title Setup Slack Token
+// @raycast.title Slack - Setup Token
 // @raycast.mode compact
 
 // Optional parameters:

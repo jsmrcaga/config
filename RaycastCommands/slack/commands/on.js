@@ -2,7 +2,7 @@
 
 // Required parameters:
 // @raycast.schemaVersion 1
-// @raycast.title Back on Slack
+// @raycast.title Slack - Back on
 // @raycast.mode compact
 
 // Optional parameters:

@@ -2,7 +2,7 @@
 
 // Required parameters:
 // @raycast.schemaVersion 1
-// @raycast.title Off for the day on Slack (zzz)
+// @raycast.title Slack - Off for the day (zzz)
 // @raycast.mode compact
 
 // Optional parameters:
