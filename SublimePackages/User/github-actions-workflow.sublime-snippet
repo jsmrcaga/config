@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+name: ${1:name}
+
+jobs:
+  ${2:job_name}:
+    name: ${3:name}
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@master
+      - run: npm install
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>!gha</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.yml</scope> -->
+</snippet>
