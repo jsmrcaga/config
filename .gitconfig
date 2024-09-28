@@ -19,6 +19,7 @@
 	cleanup = "!git branch | grep -v "master" | xargs git branch -D"
 	contrib = !git pull --rebase && git push
 	magic = !git add -u && git amend && git pl
+	blame-orig = blame -w -C -C -C
 [user]
 	name = Jo Colina
 	email = jo@jocolina.com
