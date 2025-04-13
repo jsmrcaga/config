@@ -40,4 +40,5 @@
 	"caret_style": "phase",
 	"auto_complete_commit_on_tab": true,
 	"sublime_merge_path": null,
+	"index_files": true,
 }
