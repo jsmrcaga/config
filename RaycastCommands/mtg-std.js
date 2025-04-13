@@ -17,6 +17,9 @@ const Process = require('node:child_process');
 // @raycast.author Jo Colina
 // @raycast.authorURL https://github.com/jsmrcaga
 
+// 2.5 years per set
+const STANDARD_ROTATION_TIME = new Date();
+STANDARD_ROTATION_TIME.setMonth(STANDARD_ROTATION_TIME.getMonth() - (12 * 2.5));
 
 // Thanks to whatsinstandard.com
 return fetch('https://whatsinstandard.com/api/v6/standard.json').then(res => {
@@ -31,9 +34,6 @@ return fetch('https://whatsinstandard.com/api/v6/standard.json').then(res => {
 
 	return res.json();
 }).then(({ sets }) => {
-	const nine_months_ago = new Date();
-	nine_months_ago.setMonth(nine_months_ago.getMonth() - 9);
-
 	const recent_sets = sets.filter(set => {
 		if(!set.code) {
 			return false;
@@ -44,12 +44,12 @@ return fetch('https://whatsinstandard.com/api/v6/standard.json').then(res => {
 		}
 
 		const set_enter_date = new Date(set.enterDate.exact);
-		return set_enter_date >= nine_months_ago;
+		return set_enter_date >= STANDARD_ROTATION_TIME;
 	});
 
 	const recent_set_names_query = recent_sets.map(set => `set:${set.code}`);
 
-	const query = `(${recent_set_names_query.join(' OR ')}) (c=b OR c=w OR c=bw)`;
+	const query = `(${recent_set_names_query.join(' OR ')}) (c=b OR c=w OR c=bw) f:standard`;
 
 	try {
 		Process.execSync(`open 'https://scryfall.com/search?q=${encodeURIComponent(query)}&order=color&as=grid&unique=cards'`);
