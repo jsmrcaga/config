@@ -33,3 +33,5 @@
 	rebase = false
 [commit]
 	gpgSign = true
+[branch]
+	sort = -committerdate
