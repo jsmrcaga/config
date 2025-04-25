@@ -112,6 +112,7 @@ function mk {
 }
 
 function pull_request {
+	DEFAULT_BRANCH=$(git remote show origin | grep "HEAD branch" | awk '{print $NF}')
 	BRANCH_NAME=$(git symbolic-ref -q --short HEAD)
 	
 	GIT_URL=$(git remote get-url --push origin)
@@ -120,7 +121,7 @@ function pull_request {
 	REPO_NAME=${BASENAME%.*}
 	OWNER_NAME=$(echo $GIT_URL | cut -d/ -f1 | cut -d: -f2)
 
-	open "https://github.com/$OWNER_NAME/$REPO_NAME/compare/master...$BRANCH_NAME"
+	open "https://github.com/$OWNER_NAME/$REPO_NAME/compare/$DEFAULT_BRANCH...$BRANCH_NAME"
 }
 
 alias pr="pull_request"
