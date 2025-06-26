@@ -39,3 +39,4 @@
 	enabled = true
 [tag]
 	sign = true
+	sort = -v:refname
