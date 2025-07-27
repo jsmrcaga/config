@@ -12,7 +12,6 @@
 // @raycast.argument1 { "type": "text", "placeholder": "Command", "percentEncoded": false, "optional": false, "secure": false }
 
 
-
 // Documentation:
 // @raycast.description Run any command
 // @raycast.author Jo Colina
