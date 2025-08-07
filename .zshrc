@@ -4,6 +4,9 @@
 # test speed
 #zmodload zsh/zprof  
 
+# dirname, dot is enough
+__dirname="."
+
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/jocolina/.oh-my-zsh"
@@ -151,3 +154,8 @@ export VISUAL="$EDITOR"
 ## Kubernetes
 alias k="kubectl --kubeconfig ~/.k3s/k3s-remote.yml"
 #zprof
+
+
+if [[ -f "$__dirname/.zshrc-override.sh" ]]; then
+	source "$__dirname/.zshrc-override.sh"
+fi
