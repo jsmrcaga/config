@@ -1,5 +1,9 @@
-\# If you come from bash you might have to change your $PATH.
+# If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# test speed
+#zmodload zsh/zprof  
+
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/jocolina/.oh-my-zsh"
@@ -62,6 +66,8 @@ plugins=(
   git
 )
 
+# Disable async prompts to make branch switching fast again
+zstyle ':omz:alpha:lib:git' async-prompt no
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -94,6 +100,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # UTILS
+alias s="subl"
 alias http=http-server
 
 # DEV
@@ -127,49 +134,20 @@ function pull_request {
 alias pr="pull_request"
 alias br="branch"
 
-# GULP
-alias gulpy='gulp default'
-alias glint='gulp lint'
-alias gest='gulp test'
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-
-# WEEZ HUGE REPO
-alias wz='docker-compose run --rm www'
-
-# added by travis gem
-[ -f /Users/jocolina/.travis/travis.sh ] && source /Users/jocolina/.travis/travis.sh
-
-alias f8=flake8
-
-# NPM MODULES
-alias webpack='webpack-cli'
-
-# Docker utility
-function pyvar_worker() {
-	CID=$(docker ps -aqf "name=pyvar_worker")
-	docker stop $CID
-	docker start $CID
-}
-
-# Weez CLI
-
-export JIRA_USERNAME="jo.colina@weezevent.com"
-export JIRA_HOSTNAME=""
-export JIRA_TOKEN=""
-export DANA_CLIENT_ID=""
-
-# Discord
-export DISCORD_BOT_TOKEN=""
-
-# Weez
-alias weez_ssl=""
 
 alias meet="open \"https://meet.google.com/new?authuser=1\""
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/jocolina/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jocolina/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/jocolina/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jocolina/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+# Reqct native shit
+export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+
+
+export EDITOR=nano
+export VISUAL="$EDITOR"
+
+
+## Kubernetes
+alias k="kubectl --kubeconfig ~/.k3s/k3s-remote.yml"
+#zprof
