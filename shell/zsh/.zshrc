@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # test speed
-#zmodload zsh/zprof  
+# zmodload zsh/zprof
 
 # dirname, dot is enough
 __dirname="."
@@ -34,7 +34,7 @@ ZSH_THEME="robbyrussell"
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+export UPDATE_ZSH_DAYS=30
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -153,9 +153,10 @@ export VISUAL="$EDITOR"
 
 ## Kubernetes
 alias k="kubectl --kubeconfig ~/.k3s/k3s-remote.yml"
-#zprof
 
 
 if [[ -f "$__dirname/.zshrc-override.sh" ]]; then
 	source "$__dirname/.zshrc-override.sh"
 fi
+
+# zprof
