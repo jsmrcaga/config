@@ -23,7 +23,6 @@
 [user]
 	name = Jo Colina
 	email = jo@jocolina.com
-	signingkey = 983C46C10A1B09254A6FD2EFBD971FBC8D9BDA43
 [core]
 	editor = nano
 	excludesfile = ~/.gitignore
@@ -40,3 +39,6 @@
 [tag]
 	sign = true
 	sort = -v:refname
+
+[include]
+	path = .gitoverride

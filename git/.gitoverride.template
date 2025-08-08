@@ -1,0 +1,5 @@
+# To make this work, create a .gitsignature file
+# next to your .gitconfig file
+[user]
+	email = override@override.com
+	signingkey = xxxxxxxxxxxxxxx
