@@ -5,7 +5,8 @@
 # zmodload zsh/zprof
 
 # dirname, dot is enough
-__dirname="."
+# __dirname={0:a:h}
+__dirname="$HOME"
 
 
 # Path to your oh-my-zsh installation.
