@@ -1,5 +1,7 @@
 [
 	{ "keys": ["shift+super+up"], "command": "swap_line_up" },
 	{ "keys": ["shift+super+down"], "command": "swap_line_down" },
-	{ "keys": ["alt+s"], "command": "diff_changes" }
+	{ "keys": ["alt+s"], "command": "diff_changes" },
+	{ "keys": ["super+ctrl+alt+left"], "command": "focus_neighboring_group", "args": {"forward": false} },
+	{ "keys": ["super+ctrl+alt+right"], "command": "focus_neighboring_group" }
 ]
