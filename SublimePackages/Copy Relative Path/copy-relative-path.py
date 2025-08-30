@@ -9,8 +9,8 @@ from os.path import relpath
 # Unofficial Docs
 # @see https://docs.sublimetext.io/reference/plugins.html
 class CopyRelativePathCommand(sublime_plugin.TextCommand):
-	def run(self, edit):
-		if not self.view.is_valid():
+	def run(self, edit, is_sidebar=False):
+		if not is_sidebar and not self.view.is_valid():
 			return
 
 		filename = self.view.file_name()

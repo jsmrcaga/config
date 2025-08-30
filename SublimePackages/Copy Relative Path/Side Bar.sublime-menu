@@ -2,6 +2,9 @@
 	// { "caption": "-", "id": "chicken" },
 	{
 		"command": "copy_relative_path",
-		"caption":"Copy Relative Path"
+		"caption":"Copy Relative Path",
+		"args": {
+			"is_sidebar": true
+		}
 	}
 ]
