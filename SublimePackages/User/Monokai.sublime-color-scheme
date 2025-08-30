@@ -1,0 +1,9 @@
+{
+  "name": "JavaScript color scheme overrides",
+  "rules": [
+    {
+      "scope": "entity.other.attribute-name.documentation.js",
+      "foreground": "darkgray"
+    }
+  ]
+}
