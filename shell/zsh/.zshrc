@@ -161,3 +161,11 @@ if [[ -f "$__dirname/.zshrc-override.sh" ]]; then
 fi
 
 # zprof
+
+# Nodejs
+alias pkg="cat ./package.json | jq"
+
+
+function t() {
+	tmux new -s $1
+}
