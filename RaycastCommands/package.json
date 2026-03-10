@@ -1,0 +1,21 @@
+{
+  "name": "@jsmrcaga/raycastcommands",
+  "version": "0.0.0",
+  "description": "",
+  "main": "chmod-decode.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha --exit ./tests"
+  },
+  "keywords": [],
+  "author": "Jo Colina <jo@jocolina.com>",
+  "license": "MIT",
+  "type": "commonjs",
+  "devDependencies": {
+    "chai": "^4.5.0",
+    "mocha": "^11.7.5"
+  }
+}
