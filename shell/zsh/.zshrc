@@ -4,13 +4,13 @@
 # test speed
 # zmodload zsh/zprof
 
-# dirname, dot is enough
 # __dirname={0:a:h}
+# :a does not resolve symlinks (unlike :A)
 __dirname="$HOME"
 
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/jocolina/.oh-my-zsh"
+export ZSH="/Users/$USER/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
