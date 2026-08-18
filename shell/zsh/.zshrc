@@ -155,13 +155,6 @@ export VISUAL="$EDITOR"
 ## Kubernetes
 alias k="kubectl --kubeconfig ~/.k3s/k3s-remote.yml"
 
-
-if [[ -f "$__dirname/.zshrc-override.sh" ]]; then
-	source "$__dirname/.zshrc-override.sh"
-fi
-
-# zprof
-
 # Nodejs
 alias pkg="cat ./package.json | jq"
 
@@ -169,3 +162,7 @@ alias pkg="cat ./package.json | jq"
 function t() {
 	tmux new -s $1
 }
+
+if [[ -f "$__dirname/.zshrc-override.sh" ]]; then
+	source "$__dirname/.zshrc-override.sh"
+fi
