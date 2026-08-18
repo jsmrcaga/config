@@ -123,8 +123,8 @@ function mk {
 }
 
 function pull_request {
-	DEFAULT_BRANCH=$(git remote show origin | grep "HEAD branch" | awk '{print $NF}')
-	BRANCH_NAME="${1:-$(git symbolic-ref -q --short HEAD)}"
+	DEFAULT_BRANCH="${1:-$(git remote show origin | grep "HEAD branch" | awk '{print $NF}')}"
+	BRANCH_NAME="${2:-$(git symbolic-ref -q --short HEAD)}"
 	
 	GIT_URL=$(git remote get-url --push origin)
 	
