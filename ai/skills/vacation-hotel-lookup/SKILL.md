@@ -13,37 +13,11 @@ metadata:
 
 This JSON schema defines the metadata file you will write at the end.
 It also lets you understand some necessary inputs from the user
-```json
-{
-	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"type": "object",
-	"required": ["stays", "trip_name"],
-	"properties": {
-		"trip_name": { "type": "string" },
-		"currency": { "type": "string" },
-		"amenities": {
-			"type": "array",
-			"items": { "type": "string" }
-		},
-		"stays": {
-			"type": "array",
-			"items": {
-				"type": "object",
-				"required": ["location", "start", "end"],
-				"properties": {
-					"location": { "type": "string" },
-					"landmarks": {
-						"type": "array",
-						"items": { "type": "string" }
-					},
-					"start": { "type": "string", "format": "date" },
-					"end": { "type": "string", "format": "date" },
-				}
-			}
-		}
-	}
-}
-```
+
+Find the schema on the assets folder of this Skill
+- [Schema](assets/input.json-schema.json)
+
+## Input instructions
 
 The user should provide the following inputs
 - date range or ranges
@@ -58,7 +32,7 @@ The user should provide the following inputs
 	- any businesses in the vicinity
 - The user may provide an approximate location or landmarks to approximate
 
-If these inputs are not provided beforehand, make sure to ask.
+- If these inputs are not provided beforehand, make sure to ask.
 
 # Providers
 Check and use the following providers to check hotel prices
