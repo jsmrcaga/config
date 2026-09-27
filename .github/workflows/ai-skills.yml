@@ -39,7 +39,7 @@ jobs:
 
           changed_dirs=$(echo "$all_files" \
             | grep -E '^ai/skills/.+' \
-            | xargs -n1 dirname \
+            | awk -F/ '{print $1"/"$2"/"$3}' \
             | sort -u || true)
 
           echo "Changed dirs:"
