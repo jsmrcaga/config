@@ -1,0 +1,83 @@
+name: AI Skills Validation
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    paths:
+      - ai/skills/**
+      - .github/workflows/ai-skills.yml
+
+jobs:
+  find_changed_skills:
+    name: Find Changed Skills
+
+    runs-on: ubuntu-latest
+
+    outputs:
+      matrix: ${{ steps.changed-skills.outputs.matrix }}
+      has_changes: ${{ steps.changed-skills.outputs.has_changes }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+        with:
+          fetch-depth: 0
+
+      - name: Find changed skills
+        id: changed-skills
+        run: |
+          RANGE="${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }}"
+
+          changed_tracked=$(git diff --name-only $RANGE -- ai/skills)
+          untracked=$(git ls-files --others --exclude-standard -- ai/skills)
+
+          all_files=$(printf "%s\n%s" "$changed_tracked" "$untracked")
+
+          # Debugging
+          echo "Found changed AI skills:"
+          echo $all_files
+
+          changed_dirs=$(echo "$all_files" \
+            | grep -E '^ai/skills/.+' \
+            | xargs -n1 dirname \
+            | sort -u || true)
+
+          echo "Changed dirs:"
+          echo $all_files
+
+          json_dirs=$(echo "$changed_dirs" | jq -R -s -c 'split("\n") | map(select(length > 0))')
+
+          count=$(echo "$json_dirs" | jq length)
+
+          if [ "$count" -gt 0 ]; then
+            echo "Found changed skills $json_dirs"
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "matrix=$json_dirs" >> $GITHUB_OUTPUT
+          else
+            echo "Did not find any changed skills"
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "matrix=[]" >> $GITHUB_OUTPUT
+          fi
+
+  validate_skills:
+    needs: [find_changed_skills]
+    name: Validate skills
+
+    runs-on: ubuntu-latest
+    if: needs.find_changed_skills.outputs.has_changes == 'true'
+
+    strategy:
+      matrix:
+        skill: ${{ fromJson(needs.find_changed_skills.outputs.matrix) }}
+
+    steps:
+      - name: Clone
+        uses: actions/checkout@master
+
+      - name: Run skill validator
+        run: |
+          docker run \
+            -t --rm \
+            -v ./${{ matrix.skill }}:/app/${{ matrix.skill }} \
+            jsmrcaga/skills-ref:v0.1 \
+            validate /app/${{ matrix.skill }}
