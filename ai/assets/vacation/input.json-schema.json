@@ -1,0 +1,41 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"required": ["stays", "trip_name", "activities_preferences"],
+	"properties": {
+		"trip_name": { "type": "string" },
+		"currency": { "type": "string" },
+		"maximum_total_hotel_budget": { "type": "number" },
+		"maximum_hotel_budget_per_night": { "type": "number" },
+		"number_of_guests": { "type": "number" },
+		"stays": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"required": ["location", "start", "end"],
+				"properties": {
+					"location": { "type": "string" },
+					"start": { "type": "string", "format": "date" },
+					"end": { "type": "string", "format": "date" },
+				}
+			},
+			"minItems": 1
+		},
+		"activities_preferences": {
+			"type": "object",
+			"properties": {
+				"maximum_activity_budget": { "type": "number" },
+				"likes": {
+					"type": "array",
+					"items": { "type": "string" },
+					"minItems": 1
+				},
+				"dislikes": {
+					"type": "array",
+					"items": { "type": "string" },
+					"minItems": 1
+				}
+			}
+		}
+	}
+}
