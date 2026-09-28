@@ -32,9 +32,16 @@ locations:
 ## `tl;dr` Recommendations
 
 ```md
-Recommendation N
-| Date | Hotel | Activities | Gmaps link |
-| YYYY-MM-DD | Hotel name | Activities list | Link for gmaps activities |
+### Recommendation N
+Activities
+
+| Date | Activity | Gmaps link |
+| YYYY-MM-DD | Activities list | Link for gmaps activities |
+
+Hotels
+
+| From | To | Activity | Offer Link | Total Price |
+| YYYY-MM-DD | YYYY-MM-DD | http:... | Price |
 ```
 
 ## Gotchas
