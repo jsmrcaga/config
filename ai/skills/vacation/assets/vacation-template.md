@@ -35,8 +35,8 @@ locations:
 ### Recommendation N
 Activities
 
-| Date | Activity | Gmaps link |
-| YYYY-MM-DD | Activities list | Link for gmaps activities |
+| Date | Activities | Description | Gmaps link |
+| YYYY-MM-DD | Activities list | Description of the activities | Link for gmaps activities |
 
 Hotels
 
