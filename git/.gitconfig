@@ -20,6 +20,7 @@
 	contrib = !git pull --rebase && git push
 	magic = !git add -u && git amend && git pl
 	blame-orig = blame -w -C -C -C
+	since = "!git log ${1:-master}.."
 [user]
 	name = Jo Colina
 	email = jo@jocolina.com
