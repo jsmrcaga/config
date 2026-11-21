@@ -42,4 +42,5 @@
 	"sublime_merge_path": null,
 	"index_files": true,
 	"overlay_scroll_bars": "enabled",
+	"rulers": [80]
 }
